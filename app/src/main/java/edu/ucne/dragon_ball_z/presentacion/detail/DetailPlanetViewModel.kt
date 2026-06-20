@@ -8,6 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import edu.ucne.dragon_ball_z.data.remote.Resource
 import edu.ucne.dragon_ball_z.domain.UseCase.GetPlanetDetailUseCase
 import edu.ucne.dragon_ball_z.domain.repository.PlanetRepository
+import edu.ucne.dragon_ball_z.presentacion.navigation.Screen
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -23,8 +24,8 @@ class DetailPlanetViewModel @Inject constructor(
     val state = _state.asStateFlow()
 
     init {
-        val planetId = savedState.get<Int>("planetId")
-        planetId?.let { loadPlanet(it)}
+        val args = savedState.toRoute<Screen.PlanetDetail>()
+        loadPlanet(args.id)
     }
 
     private fun loadPlanet(id: Int){

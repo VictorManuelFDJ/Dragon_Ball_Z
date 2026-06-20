@@ -1,5 +1,8 @@
 package edu.ucne.dragon_ball_z.data.remote.dto
 
+import com.squareup.moshi.JsonClass
+import edu.ucne.dragon_ball_z.domain.model.Planet
+
 
 @JsonClass(generateAdapter = true)
 data class PlanetsResponseDto(

@@ -3,6 +3,7 @@ package edu.ucne.dragon_ball_z.presentacion.detail
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -28,7 +29,7 @@ fun PlanetDetailScreen(
                 title = { Text("Detalle del Planeta")},
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack,
+                        Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Atrás")
                     }
                 }
@@ -39,7 +40,7 @@ fun PlanetDetailScreen(
             CircularProgressIndicator(modifier = Modifier.padding(padding))
         }
 
-        state.planet?.let { planetDto ->
+        state.planet?.let { planet ->
             Column(
                 modifier = Modifier
                     .padding(padding)
