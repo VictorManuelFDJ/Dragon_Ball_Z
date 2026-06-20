@@ -1,12 +1,15 @@
 package edu.ucne.dragon_ball_z.data.remote
 
-import androidx.room.Query
+
 import edu.ucne.dragon_ball_z.data.remote.dto.PlanetDto
 import edu.ucne.dragon_ball_z.data.remote.dto.PlanetsResponseDto
-import okhttp3.Response
+import retrofit2.Response
+import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface DragonBallApi {
-    @Get("planets")
+    @GET("planets")
     suspend fun getPlanets(
         @Query("page") page: Int,
         @Query("limit") limit: Int,
@@ -14,8 +17,8 @@ interface DragonBallApi {
         @Query("isDestroyed") isDestroyed: Boolean?
     ): Response<PlanetsResponseDto>
 
-    @Get("planets/{id}")
+    @GET("planets/{id}")
     suspend fun getPlanetDetail(
-        @path("id") id: Int
+        @Path("id") id: Int
     ): Response<PlanetDto>
 }
