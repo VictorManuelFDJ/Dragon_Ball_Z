@@ -7,6 +7,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import edu.ucne.dragon_ball_z.data.remote.DragonBallApi
+import edu.ucne.dragon_ball_z.data.remote.remotedatasource.PlanetRemoteDataSource
 import edu.ucne.dragon_ball_z.data.repository.PlanetRepositoryImp
 import edu.ucne.dragon_ball_z.domain.repository.PlanetRepository
 import retrofit2.Retrofit
@@ -37,7 +38,7 @@ object AppModule{
     }
     @Provides
     @Singleton
-    fun provideRepository(api: DragonBallApi): PlanetRepository {
-        return PlanetRepositoryImp(api)
+    fun provideRepository(planetRemoteDataSource: PlanetRemoteDataSource): PlanetRepository {
+        return PlanetRepositoryImp(planetRemoteDataSource)
     }
 }
