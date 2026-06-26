@@ -7,7 +7,6 @@ import androidx.navigation.toRoute
 import dagger.hilt.android.lifecycle.HiltViewModel
 import edu.ucne.dragon_ball_z.data.remote.Resource
 import edu.ucne.dragon_ball_z.domain.UseCase.GetPlanetDetailUseCase
-import edu.ucne.dragon_ball_z.domain.repository.PlanetRepository
 import edu.ucne.dragon_ball_z.presentacion.navigation.Screen
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -18,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailPlanetViewModel @Inject constructor(
     private val getPlanetDetailUseCase: GetPlanetDetailUseCase,
-    savedState: SavedStateHandle
+    savedState: SavedStateHandle,
 ): ViewModel(){
     private val _state = MutableStateFlow(DetailPlanetUiState())
     val state = _state.asStateFlow()
@@ -30,14 +29,17 @@ class DetailPlanetViewModel @Inject constructor(
 
     private fun loadPlanet(id: Int){
         viewModelScope.launch {
-            _state.update {it.copy(isLoading = true)}
-            when(val result = getPlanetDetailUseCase(id)){
-                is Resource.Loading ->  {}
-                is Resource.Success -> {
-                    _state.update { it.copy(isLoading = false, planet = result.data?.toDomain())}
-                }
-                is Resource.Error -> {
-                    _state.update { it.copy(isLoading = false, error = result.message) }
+            getPlanetDetailUseCase(id).collect { result ->
+                when(result){
+                    is Resource.Loading ->  {
+                        _state.update { it.copy(isLoading = true) }
+                    }
+                    is Resource.Success -> {
+                        _state.update { it.copy(isLoading = false, planet = result.data) }
+                    }
+                    is Resource.Error -> {
+                        _state.update { it.copy(isLoading = false, error = result.message) }
+                    }
                 }
             }
         }

@@ -1,8 +1,8 @@
 package edu.ucne.dragon_ball_z.data.remote
 
 
-import edu.ucne.dragon_ball_z.data.remote.dto.PlanetDto
-import edu.ucne.dragon_ball_z.data.remote.dto.PlanetsResponseDto
+import edu.ucne.dragon_ball_z.data.dto.PlanetDto
+import edu.ucne.dragon_ball_z.data.dto.PlanetsResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

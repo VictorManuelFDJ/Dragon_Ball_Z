@@ -1,4 +1,4 @@
-package edu.ucne.dragon_ball_z.data.remote.dto
+package edu.ucne.dragon_ball_z.data.dto
 
 import com.squareup.moshi.JsonClass
 import edu.ucne.dragon_ball_z.domain.model.Planet
