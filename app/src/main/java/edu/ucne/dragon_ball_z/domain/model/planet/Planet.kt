@@ -1,4 +1,4 @@
-package edu.ucne.dragon_ball_z.domain.model
+package edu.ucne.dragon_ball_z.domain.model.planet
 
 data class Planet(
     val  id: Int,

@@ -9,9 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import edu.ucne.dragon_ball_z.presentacion.detail.PlanetDetailScreen
-import edu.ucne.dragon_ball_z.presentacion.list.PlanetListScreen
-
+import edu.ucne.dragon_ball_z.presentacion.planet.detail.PlanetDetailScreen
+import edu.ucne.dragon_ball_z.presentacion.planet.list.PlanetListScreen
+import edu.ucne.dragon_ball_z.presentacion.charecter.detail.CharacterDetailScreen
+import edu.ucne.dragon_ball_z.presentacion.charecter.list.CharacterListScreen
 
 
 @Composable
@@ -60,6 +61,21 @@ fun AppNavHost(
                 onBack = {
                     navHostController.navigateUp()
                 }
+            )
+        }
+
+        composable<Screen.CharacterList> {
+            CharacterListScreen(
+                onCharacterClick = { characterId ->
+
+                    navHostController.navigate(Screen.CharacterDetail(id = characterId))
+                }
+            )
+        }
+
+        composable<Screen.CharacterDetail> {
+            CharacterDetailScreen(
+                onBack = { navHostController.navigateUp() }
             )
         }
     }

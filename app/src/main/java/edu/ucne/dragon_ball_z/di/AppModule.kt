@@ -7,9 +7,12 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import edu.ucne.dragon_ball_z.data.remote.DragonBallApi
-import edu.ucne.dragon_ball_z.data.remote.remotedatasource.PlanetRemoteDataSource
-import edu.ucne.dragon_ball_z.data.repository.PlanetRepositoryImp
-import edu.ucne.dragon_ball_z.domain.repository.PlanetRepository
+import edu.ucne.dragon_ball_z.data.remote.remotedatasource.character.CharacterRemoteDataSource
+import edu.ucne.dragon_ball_z.data.remote.remotedatasource.planet.PlanetRemoteDataSource
+import edu.ucne.dragon_ball_z.data.repository.character.CharacterRepositoryImpl
+import edu.ucne.dragon_ball_z.data.repository.planet.PlanetRepositoryImp
+import edu.ucne.dragon_ball_z.domain.repository.character.CharacterRepository
+import edu.ucne.dragon_ball_z.domain.repository.planet.PlanetRepository
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
@@ -40,5 +43,13 @@ object AppModule{
     @Singleton
     fun provideRepository(planetRemoteDataSource: PlanetRemoteDataSource): PlanetRepository {
         return PlanetRepositoryImp(planetRemoteDataSource)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCharacterRepository(
+        remoteDataSource: CharacterRemoteDataSource
+    ): CharacterRepository {
+        return CharacterRepositoryImpl(remoteDataSource)
     }
 }

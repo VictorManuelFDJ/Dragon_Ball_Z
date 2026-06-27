@@ -1,8 +1,7 @@
-package edu.ucne.dragon_ball_z.data.remote.remotedatasource
+package edu.ucne.dragon_ball_z.data.remote.remotedatasource.planet
 
-
-import edu.ucne.dragon_ball_z.data.dto.PlanetDto
-import edu.ucne.dragon_ball_z.data.dto.PlanetsResponseDto
+import edu.ucne.dragon_ball_z.data.dto.planet.PlanetDto
+import edu.ucne.dragon_ball_z.data.dto.planet.PlanetsResponseDto
 import edu.ucne.dragon_ball_z.data.remote.DragonBallApi
 import retrofit2.HttpException
 import javax.inject.Inject

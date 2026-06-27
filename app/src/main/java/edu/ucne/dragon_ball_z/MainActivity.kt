@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import edu.ucne.dragon_ball_z.presentacion.navigation.AppNavHost
+import edu.ucne.dragon_ball_z.presentacion.navigation.DragonBallZRoot
 import edu.ucne.dragon_ball_z.ui.theme.Dragon_Ball_ZTheme
 
 @AndroidEntryPoint
@@ -29,8 +30,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val navController = rememberNavController()
-                    AppNavHost(navHostController = navController)
+                    DragonBallZRoot()
                 }
             }
         }
