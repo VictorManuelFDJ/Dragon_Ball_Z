@@ -1,4 +1,4 @@
-package edu.ucne.dragon_ball_z.presentacion.list
+package edu.ucne.dragon_ball_z.presentacion.planet.list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import edu.ucne.dragon_ball_z.domain.model.Planet
+import edu.ucne.dragon_ball_z.domain.model.planet.Planet
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

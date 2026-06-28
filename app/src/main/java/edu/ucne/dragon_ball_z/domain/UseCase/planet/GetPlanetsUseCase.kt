@@ -1,8 +1,8 @@
-package edu.ucne.dragon_ball_z.domain.UseCase
+package edu.ucne.dragon_ball_z.domain.UseCase.planet
 
 import edu.ucne.dragon_ball_z.data.remote.Resource
-import edu.ucne.dragon_ball_z.domain.model.Planet
-import edu.ucne.dragon_ball_z.domain.repository.PlanetRepository
+import edu.ucne.dragon_ball_z.domain.model.planet.Planet
+import edu.ucne.dragon_ball_z.domain.repository.planet.PlanetRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

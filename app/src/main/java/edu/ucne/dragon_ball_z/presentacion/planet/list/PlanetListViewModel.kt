@@ -1,10 +1,10 @@
-package edu.ucne.dragon_ball_z.presentacion.list
+package edu.ucne.dragon_ball_z.presentacion.planet.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import edu.ucne.dragon_ball_z.data.remote.Resource
-import edu.ucne.dragon_ball_z.domain.repository.PlanetRepository
+import edu.ucne.dragon_ball_z.domain.repository.planet.PlanetRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update

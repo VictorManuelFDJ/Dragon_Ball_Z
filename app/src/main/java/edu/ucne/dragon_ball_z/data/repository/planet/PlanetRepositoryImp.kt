@@ -1,9 +1,9 @@
-package edu.ucne.dragon_ball_z.data.repository
+package edu.ucne.dragon_ball_z.data.repository.planet
 
 import edu.ucne.dragon_ball_z.data.remote.Resource
-import edu.ucne.dragon_ball_z.data.remote.remotedatasource.PlanetRemoteDataSource
-import edu.ucne.dragon_ball_z.domain.model.Planet
-import edu.ucne.dragon_ball_z.domain.repository.PlanetRepository
+import edu.ucne.dragon_ball_z.data.remote.remotedatasource.planet.PlanetRemoteDataSource
+import edu.ucne.dragon_ball_z.domain.model.planet.Planet
+import edu.ucne.dragon_ball_z.domain.repository.planet.PlanetRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

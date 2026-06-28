@@ -1,15 +1,11 @@
-package edu.ucne.dragon_ball_z.data.dto
+package edu.ucne.dragon_ball_z.data.dto.planet
 
-import com.squareup.moshi.JsonClass
-import edu.ucne.dragon_ball_z.domain.model.Planet
+import edu.ucne.dragon_ball_z.domain.model.planet.Planet
 
-
-@JsonClass(generateAdapter = true)
 data class PlanetsResponseDto(
     val items: List<PlanetDto>
 )
 
-@JsonClass(generateAdapter = true)
 data class PlanetDto(
     val id: Int,
     val name: String,
